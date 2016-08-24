@@ -1,10 +1,9 @@
 var readoutElement = document.querySelector(".readout");
+var equationElement = document.querySelector(".equation");
+
 var digitsElementArray = document.querySelectorAll(".number");
-
 var operatorsElementArray = document.querySelectorAll(".operator");
-
 var evaluateElement = document.querySelector(".evaluate");
-
 var clearElement = document.querySelector(".clear");
 
 var a = undefined;
@@ -47,17 +46,20 @@ function init(){
         operatorElement.addEventListener("click", function(){
             if(a === undefined){
                 a = Number(readoutElement.innerText);
-                // readoutElement.innerText = "0";
-                overwrite = true;
+
+                equationElement.innerHTML = a + " ";
+                equationElement.innerHTML += this.innerText + " ";
             } else{
                 b = Number(readoutElement.innerText);
                 readoutElement.innerText = operators[operator](a, b);
+                equationElement.innerHTML = a + " " + this.innerText + " " + b;
                 a = operators[operator](a, b);
                 b = undefined;
-                overwrite = true;
             }
 
+            overwrite = true;
             operator = this.getAttribute("data-operator");
+
         });
     });
 
@@ -66,6 +68,7 @@ function init(){
 
         if(a !== undefined && b !== undefined){
             readoutElement.innerText = operators[operator](a, b);
+            equationElement.innerHTML += b + " ";
             a = undefined;
             b = undefined;
             overwrite = true;
