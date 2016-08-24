@@ -1,0 +1,39 @@
+.container{
+    text-align: center;
+    padding-top: 60px;
+}
+.inner-container{
+    background: #888;
+    padding: 70px 30px 30px 30px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.readout{
+    width: 450px;
+    height: 100px;
+    margin: 10px;
+    margin-bottom: 30px;
+    background: #e2e2e2;
+    border-radius: 15px;
+    font-size: 90px;
+    padding: 10px;
+    text-align: right;
+}
+
+button{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    font-size: 36px;
+    color: #000;
+    background: #e2e2e2;
+    border: 0;
+    border-bottom: 5px solid #aaa;
+    border-radius: 15px;
+}
+
+.extend{
+    width: 220px;
+    margin: 10px;
+}
