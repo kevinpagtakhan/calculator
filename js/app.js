@@ -10,7 +10,6 @@ var clearElement = document.querySelector(".clear");
 var a = undefined;
 var b = undefined;
 var overwrite = true;
-var isEndOfExpression = false;
 var operator = undefined;
 
 var operators = {
@@ -48,13 +47,12 @@ function init(){
         operatorElement.addEventListener("click", function(){
             if(a === undefined){
                 a = Number(readoutElement.innerText);
-                readoutElement.innerText = "0";
+                // readoutElement.innerText = "0";
                 overwrite = true;
             } else{
                 b = Number(readoutElement.innerText);
                 readoutElement.innerText = operators[operator](a, b);
                 a = operators[operator](a, b);
-                isEndOfExpression = false;
                 b = undefined;
                 overwrite = true;
             }
@@ -65,11 +63,13 @@ function init(){
 
     evaluateElement.addEventListener("click", function(){
         b = Number(readoutElement.innerText);
-        readoutElement.innerText = operators[operator](a, b);
-        a = undefined;
-        b = undefined;
-        overwrite = true;
-        isEndOfExpression = true;
+
+        if(a !== undefined && b !== undefined){
+            readoutElement.innerText = operators[operator](a, b);
+            a = undefined;
+            b = undefined;
+            overwrite = true;
+        }
     });
 
     clearElement.addEventListener("click", function(){
@@ -77,7 +77,6 @@ function init(){
         a = undefined;
         b = undefined;
         overwrite = true;
-        isEndOfExpression = false;
         operator = undefined;
     });
 }
