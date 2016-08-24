@@ -1,39 +1,55 @@
+body{
+    font-family: 'Open Sans';
+    font-weight: 300;
+}
+
 .container{
     text-align: center;
-    padding-top: 60px;
+    padding-top: 100px;
+    border-radius: 15px;
 }
 .inner-container{
-    background: #888;
-    padding: 70px 30px 30px 30px;
-    border-radius: 15px;
+    background: #999999;
     display: inline-block;
+    border-radius: 15px;
 }
 
 .readout{
-    width: 450px;
+    width: 380px;
     height: 100px;
-    margin: 10px;
-    margin-bottom: 30px;
-    background: #e2e2e2;
-    border-radius: 15px;
+    background: #999999;
     font-size: 90px;
-    padding: 10px;
+    padding: 40px 20px 20px 20px;
     text-align: right;
+    border-radius: 15px 15px 0px 0px;
+    color: #fff;
 }
 
 button{
     width: 100px;
     height: 100px;
-    margin: 10px;
     font-size: 36px;
     color: #000;
     background: #e2e2e2;
     border: 0;
-    border-bottom: 5px solid #aaa;
-    border-radius: 15px;
+    border-bottom: 3px solid #8e8e8e;
+    font-family: 'Open Sans';
+    font-weight: 200;
 }
 
 .extend{
-    width: 220px;
-    margin: 10px;
+    width: 204px;
+}
+
+.operator, .evaluate{
+    background-color:  #f5923e;
+    color: #fff;
+}
+
+#zero{
+    border-radius: 0 0 0 15px;
+}
+
+#equal{
+    border-radius: 0 0 15px 0;
 }
