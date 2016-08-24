@@ -10,6 +10,7 @@ var a = undefined;
 var b = undefined;
 var overwrite = true;
 var operator = undefined;
+var currentOperator = "";
 
 var operators = {
     add: function(a, b){
@@ -52,13 +53,14 @@ function init(){
             } else{
                 b = Number(readoutElement.innerText);
                 readoutElement.innerText = operators[operator](a, b);
-                equationElement.innerHTML = a + " " + this.innerText + " " + b;
+                equationElement.innerText = a + " " + currentOperator + " " + b;
                 a = operators[operator](a, b);
                 b = undefined;
             }
 
             overwrite = true;
             operator = this.getAttribute("data-operator");
+            currentOperator = this.innerText;
 
         });
     });
@@ -77,6 +79,7 @@ function init(){
 
     clearElement.addEventListener("click", function(){
         readoutElement.innerText = "0";
+        equationElement.innerHTML = "&nbsp";
         a = undefined;
         b = undefined;
         overwrite = true;
