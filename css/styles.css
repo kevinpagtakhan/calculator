@@ -25,15 +25,15 @@ body{
     width: 380px;
     background: #999999;
     font-size: 90px;
-    padding: 0px 20px;
+    padding: 0 20px;
     text-align: right;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 15px 0 0;
     color: #fff;
 }
 
 button{
     width: 100px;
-    height: 100px;
+    height: 90px;
     font-size: 36px;
     color: #000;
     background: #e2e2e2;
@@ -50,6 +50,11 @@ button{
 .operator, .evaluate{
     background-color:  #f5923e;
     color: #fff;
+}
+
+.misc-operator{
+    background-color:  #d6d6d6;
+    color: #000;
 }
 
 #zero{
