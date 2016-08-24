@@ -12,6 +12,7 @@ body{
     background: #999999;
     display: inline-block;
     border-radius: 15px;
+    overflow: auto;
 }
 
 .equation{
@@ -22,7 +23,6 @@ body{
 }
 
 .readout{
-    width: 380px;
     background: #999999;
     font-size: 90px;
     padding: 0 20px;
@@ -64,3 +64,28 @@ button{
 #equal{
     border-radius: 0 0 15px 0;
 }
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    button{
+        width: 170px;
+        height: 160px;
+    }
+
+    .extend{
+        width: 344px;
+    }
+
+    .container{
+        padding-top: 300px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
